@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <cstring>   // for strlen, strcpy
 
@@ -62,7 +61,7 @@ int main(int argc, char* argv[]) {
             case 1: {
                 // TODO: implement menu logic
                 if(size == capacity){
-                    throw "Capacity reached!";
+                    std::cout << "List full" << std::endl;
                 }
 
                 char* name = new char[100];
@@ -98,7 +97,7 @@ int main(int argc, char* argv[]) {
             case 3: {
                 // TODO: implement menu logic
                 if(size == 0){
-                    throw "no students";
+                    std::cout << "No students" << std::endl;
                 }
 
                 for(int i = 0; i < size; i++){
@@ -109,10 +108,13 @@ int main(int argc, char* argv[]) {
             case 4: {
                 // TODO: implement menu logic
                 if(size == capacity){
-                    throw "Capacity maxed out";
+                    std::cout << "List full" << std::endl;
+                }
+                else if(size == 0){
+                    std::cout << "No students" << std::endl;
                 }
                 else{
-                    std::cout << averageGPA(gpas, size) << std::endl;;
+                    std::cout << "Average GPA: " << averageGPA(gpas, size) << std::endl;;
                 }
                 break;
             }
