@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>   // for strlen, strcpy
+#include <numeric>
 
 // TODO: function prototypes
 
@@ -27,12 +28,16 @@ void printStudent(char* name, double gpa){
 
 // TODO: implement averageGPA
 double averageGPA(const double gpas[], int size){
-    int sum = 0;
-    for (int i = 0; i < size; i++){
-        sum += gpas[i];
-    }
+    double sum = std::accumulate(gpas, gpas + size, 0.0);
+    double average; 
 
-    return static_cast<int> (sum) / size;
+    if(size == 0){
+        throw "No GPAs found";
+    }
+    else{
+        average = sum / size;
+    }
+    return static_cast<int>(average);
 }
 
 int main(int argc, char* argv[]) {
