@@ -67,6 +67,7 @@ int main(int argc, char* argv[]) {
                 // TODO: implement menu logic
                 if(size == capacity){
                     std::cout << "List full" << std::endl;
+                    break;
                 }
 
                 char* name = new char[100];
@@ -112,7 +113,7 @@ int main(int argc, char* argv[]) {
             }
             case 4: {
                 // TODO: implement menu logic
-                if(size == capacity){
+                if(size > capacity){
                     std::cout << "List full" << std::endl;
                 }
                 else if(size == 0){
